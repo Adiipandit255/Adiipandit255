@@ -15,7 +15,6 @@ const README_PATH = (() => {
     return paths[0]; // default fallback
 })();
 
-
 function generateSnakeSVG() {
     let rects = '';
     const cols = 53;
