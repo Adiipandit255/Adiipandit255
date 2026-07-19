@@ -3,7 +3,18 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 3000;
-const README_PATH = path.join(__dirname, 'Adiipandit255-main', 'README.md');
+const README_PATH = (() => {
+    const paths = [
+        path.join(__dirname, 'Adiipandit255', 'README.md'),
+        path.join(__dirname, 'README.md'),
+        path.join(__dirname, 'Adiipandit255-main', 'README.md')
+    ];
+    for (const p of paths) {
+        if (fs.existsSync(p)) return p;
+    }
+    return paths[0]; // default fallback
+})();
+
 
 function generateSnakeSVG() {
     let rects = '';
