@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="100%" height="220">
+  <defs>
+    <linearGradient id="flame1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0b0f19" stop-opacity="0" />
+      <stop offset="50%" stop-color="#0072ff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="flame2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0b0f19" stop-opacity="0" />
+      <stop offset="40%" stop-color="#0052d4" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#00d2ff" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="flame3" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0b0f19" stop-opacity="0" />
+      <stop offset="30%" stop-color="#4364f7" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8" />
+    </linearGradient>
+    <filter id="flame-blur">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&amp;display=swap');
+    
+    .bg {
+      fill: #0b0f19;
+      rx: 6px;
+    }
+    
+    .flame-wave {
+      transform-origin: bottom center;
+    }
+    .wave-1 {
+      animation: flicker1 3s ease-in-out infinite alternate;
+    }
+    .wave-2 {
+      animation: flicker2 2.2s ease-in-out infinite alternate;
+    }
+    .wave-3 {
+      animation: flicker3 1.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes flicker1 {
+      0% { transform: scaleY(1) skewX(-2deg); }
+      100% { transform: scaleY(1.15) skewX(2deg); }
+    }
+    @keyframes flicker2 {
+      0% { transform: scaleY(1.2) skewX(3deg); }
+      100% { transform: scaleY(0.9) skewX(-3deg); }
+    }
+    @keyframes flicker3 {
+      0% { transform: scaleY(0.85) skewX(-1deg); }
+      100% { transform: scaleY(1.1) skewX(1deg); }
+    }
+
+    .title {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      fill: #ffffff;
+      text-anchor: middle;
+    }
+    
+    .typing-text {
+      font-family: 'Outfit', -apple-system, sans-serif;
+      font-size: 20px;
+      font-weight: 600;
+      fill: #38BDF8;
+      text-anchor: middle;
+      opacity: 0;
+      animation: cycle 12s infinite;
+    }
+    .line-1 { animation-delay: 0s; }
+    .line-2 { animation-delay: 3s; }
+    .line-3 { animation-delay: 6s; }
+    .line-4 { animation-delay: 9s; }
+
+    @keyframes cycle {
+      0%, 22% { opacity: 1; }
+      25%, 100% { opacity: 0; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg" />
+
+  <!-- Flickering Waves -->
+  <g transform="translate(0, 100)">
+    <path d="M 0 120 Q 100 20 200 120 T 400 120 T 600 120 T 800 120 L 800 120 L 0 120 Z" fill="url(#flame1)" class="flame-wave wave-1" />
+    <path d="M 0 120 Q 150 40 300 120 T 600 120 T 800 120 L 800 120 L 0 120 Z" fill="url(#flame2)" class="flame-wave wave-2" filter="url(#flame-blur)" />
+    <path d="M 0 120 Q 80 50 160 120 T 320 120 T 480 120 T 640 120 T 800 120 L 800 120 L 0 120 Z" fill="url(#flame3)" class="flame-wave wave-3" />
+  </g>
+
+  <!-- Content -->
+  <text x="50%" y="90" class="title">👋 Hey there! I'm Aditya Sharma</text>
+  
+  <text x="50%" y="135" class="typing-text line-1">AI &amp; Machine Learning Enthusiast 🤖</text>
+  <text x="50%" y="135" class="typing-text line-2">Data Science Explorer 📊</text>
+  <text x="50%" y="135" class="typing-text line-3">Python &amp; Full Stack Developer 🐍</text>
+  <text x="50%" y="135" class="typing-text line-4">Building Real-World AI Solutions 🚀</text>
+
+  <!-- Bottom Border Glow Line -->
+  <line x1="0" y1="219" x2="800" y2="219" stroke="#00f2fe" stroke-width="2" />
+</svg>
