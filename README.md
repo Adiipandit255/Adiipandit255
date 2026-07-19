@@ -1,8 +1,7 @@
-# 👋 Hey there! I'm Aditya Sharma
-
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=24&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=850&lines=AI+%26+Machine+Learning+Enthusiast+%F0%9F%A4%96;Data+Science+Explorer+%F0%9F%93%8A;Python+%26+Full+Stack+Developer+%F0%9F%90%8D;Building+Real-World+AI+Solutions+%F0%9F%9A%80" alt="Typing SVG" />
+  <img src="banner.svg" width="100%" alt="Aditya Sharma Banner" />
 </p>
+
 
 <p align="center">
   <a href="https://github.com/Adiipandit255">

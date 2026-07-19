@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 220" width="100%" height="220" style="background-color: #0b0f19; border-radius: 6px; overflow: hidden;">
+  <style>
+    .title {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      fill: #ffffff;
+      text-anchor: middle;
+    }
+    .flame-wave {
+      transform-origin: bottom center;
+    }
+    .wave-1 {
+      animation: flicker1 3s ease-in-out infinite alternate;
+    }
+    .wave-2 {
+      animation: flicker2 2.2s ease-in-out infinite alternate;
+    }
+    .wave-3 {
+      animation: flicker3 1.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes flicker1 {
+      0% { transform: scaleY(1) skewX(-2deg); }
+      100% { transform: scaleY(1.15) skewX(2deg); }
+    }
+    @keyframes flicker2 {
+      0% { transform: scaleY(1.2) skewX(3deg); }
+      100% { transform: scaleY(0.9) skewX(-3deg); }
+    }
+    @keyframes flicker3 {
+      0% { transform: scaleY(0.85) skewX(-1deg); }
+      100% { transform: scaleY(1.1) skewX(1deg); }
+    }
+  </style>
+  <defs>
+    <linearGradient id="flame1" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0b0f19" stop-opacity="0" />
+      <stop offset="50%" stop-color="#0072ff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#00f2fe" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="flame2" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0b0f19" stop-opacity="0" />
+      <stop offset="40%" stop-color="#0052d4" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#00d2ff" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="flame3" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0b0f19" stop-opacity="0" />
+      <stop offset="30%" stop-color="#4364f7" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8" />
+    </linearGradient>
+    <filter id="flame-blur">
+      <feGaussianBlur stdDeviation="3" />
+    </filter>
+  </defs>
+
+  <!-- Waves -->
+  <path d="M 0 220 Q 100 120 200 220 T 400 220 T 600 220 T 800 220 L 800 220 L 0 220 Z" fill="url(#flame1)" class="flame-wave wave-1" />
+  <path d="M 0 220 Q 150 140 300 220 T 600 220 T 800 220 L 800 220 L 0 220 Z" fill="url(#flame2)" class="flame-wave wave-2" filter="url(#flame-blur)" />
+  <path d="M 0 220 Q 80 150 160 220 T 320 220 T 480 220 T 640 220 T 800 220 L 800 220 L 0 220 Z" fill="url(#flame3)" class="flame-wave wave-3" />
+
+  <!-- Bottom border line -->
+  <line x1="0" y1="219" x2="800" y2="219" stroke="#00f2fe" stroke-width="2" />
+
+  <!-- Title Text -->
+  <text x="400" y="70" class="title">👋 Hey there! I'm Aditya Sharma</text>
+
+  <!-- Typing SVG Image Integration -->
+  <image x="0" y="95" width="800" height="40" href="https://readme-typing-svg.demolab.com?font=Outfit&amp;weight=600&amp;size=24&amp;duration=3000&amp;pause=1000&amp;color=38BDF8&amp;center=true&amp;vCenter=true&amp;width=800&amp;lines=AI+%26+Machine+Learning+Enthusiast+%F0%9F%A4%96;Data+Science+Explorer+%F0%9F%93%8A;Python+%26+Full+Stack+Developer+%F0%9F%90%8D;Building+Real-World+AI+Solutions+%F0%9F%9A%80" />
+</svg>
