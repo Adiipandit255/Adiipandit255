@@ -2,6 +2,23 @@
   <img src="banner.svg" width="100%" alt="Aditya Sharma's Profile Banner" />
 </p>
 
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=24&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=850&lines=AI+%26+Machine+Learning+Enthusiast+%F0%9F%A4%96;Data+Science+Explorer+%F0%9F%93%8A;Python+%26+Full+Stack+Developer+%F0%9F%90%8D;Building+Real-World+AI+Solutions+%F0%9F%9A%80" alt="Typing SVG" />
+</p>
+
+<p align="center">
+  <a href="https://github.com/Adiipandit255">
+    <img src="https://komarev.com/ghpvc/?username=Adiipandit255&label=Profile+Views&style=for-the-badge&color=0284c7" alt="Profile Views" />
+  </a>
+  <a href="https://github.com/Adiipandit255?tab=followers">
+    <img src="https://img.shields.io/github/followers/Adiipandit255?style=for-the-badge&logo=github&color=0f172a" alt="Followers" />
+  </a>
+  <a href="https://github.com/Adiipandit255?tab=stars">
+    <img src="https://img.shields.io/github/stars/Adiipandit255?style=for-the-badge&color=0f172a" alt="Stars" />
+  </a>
+</p>
+
+
 
 ---
 
