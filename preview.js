@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 3000;
-const README_PATH = path.join(__dirname, 'README.md');
+const README_PATH = path.join(__dirname, 'Adiipandit255-main', 'README.md');
 
 function generateSnakeSVG() {
     let rects = '';
@@ -126,10 +126,171 @@ const server = http.createServer((req, res) => {
             padding: 32px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.5);
         }
+        .flame-banner {
+            position: relative;
+            width: 100%;
+            height: 220px;
+            background-color: #0b0f19;
+            border-radius: 6px;
+            overflow: hidden;
+            border-bottom: 2px solid #00f2fe;
+            box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+            margin-bottom: 24px;
+        }
+        .flame-svg {
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .flame-wave {
+            transform-origin: bottom center;
+        }
+        .wave-1 {
+            animation: flicker1 3s ease-in-out infinite alternate;
+        }
+        .wave-2 {
+            animation: flicker2 2.2s ease-in-out infinite alternate;
+        }
+        .wave-3 {
+            animation: flicker3 1.8s ease-in-out infinite alternate;
+        }
+
+        @keyframes flicker1 {
+            0% { transform: scaleY(1) skewX(-2deg); }
+            100% { transform: scaleY(1.15) skewX(2deg); }
+        }
+        @keyframes flicker2 {
+            0% { transform: scaleY(1.2) skewX(3deg); }
+            100% { transform: scaleY(0.9) skewX(-3deg); }
+        }
+        @keyframes flicker3 {
+            0% { transform: scaleY(0.85) skewX(-1deg); }
+            100% { transform: scaleY(1.1) skewX(1deg); }
+        }
+        .banner-overlay {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            z-index: 3;
+        }
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .banner-content h1 {
+            color: #ffffff;
+            font-size: 26px;
+            margin: 0 0 5px 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+        }
+        .banner-typing {
+            height: 35px;
+            margin-bottom: 5px;
+        }
+        .banner-typing img {
+            max-width: 100%;
+            height: auto;
+        }
+        .banner-badges {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .banner-badges img {
+            height: 28px;
+            border-radius: 4px;
+        }
+        .markdown-body h1:first-of-type {
+            display: none !important;
+        }
+        .markdown-body p:first-of-type {
+            display: none !important;
+        }
+        .markdown-body p:nth-of-type(2) {
+            display: none !important;
+        }
+        .badge {
+            background-color: #238636;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 12px;
+            border-radius: 2em;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <div class="flame-banner">
+            <svg viewBox="0 0 800 120" preserveAspectRatio="none" class="flame-svg">
+                <defs>
+                    <linearGradient id="flame1" x1="0" y1="1" x2="0" y2="0">
+                        <stop offset="0%" stop-color="#0b0f19" stop-opacity="0" />
+                        <stop offset="50%" stop-color="#0072ff" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#00f2fe" stop-opacity="0.8" />
+                    </linearGradient>
+                    <linearGradient id="flame2" x1="0" y1="1" x2="0" y2="0">
+                        <stop offset="0%" stop-color="#0b0f19" stop-opacity="0" />
+                        <stop offset="40%" stop-color="#0052d4" stop-opacity="0.4" />
+                        <stop offset="100%" stop-color="#00d2ff" stop-opacity="0.8" />
+                    </linearGradient>
+                    <linearGradient id="flame3" x1="0" y1="1" x2="0" y2="0">
+                        <stop offset="0%" stop-color="#0b0f19" stop-opacity="0" />
+                        <stop offset="30%" stop-color="#4364f7" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="#ffffff" stop-opacity="0.8" />
+                    </linearGradient>
+                    <filter id="flame-blur">
+                        <feGaussianBlur stdDeviation="3" />
+                    </filter>
+                </defs>
+                <path d="M 0 120 Q 100 20 200 120 T 400 120 T 600 120 T 800 120 L 800 120 L 0 120 Z" fill="url(#flame1)" class="flame-wave wave-1" />
+                <path d="M 0 120 Q 150 40 300 120 T 600 120 T 800 120 L 800 120 L 0 120 Z" fill="url(#flame2)" class="flame-wave wave-2" filter="url(#flame-blur)" />
+                <path d="M 0 120 Q 80 50 160 120 T 320 120 T 480 120 T 640 120 T 800 120 L 800 120 L 0 120 Z" fill="url(#flame3)" class="flame-wave wave-3" />
+            </svg>
+            <div class="banner-overlay">
+                <span class="badge">Live</span>
+            </div>
+            <div class="banner-content">
+                <h1>👋 Hey there! I'm Aditya Sharma</h1>
+                <div class="banner-typing">
+                    <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=600&size=24&duration=3000&pause=1000&color=38BDF8&center=true&vCenter=true&width=850&lines=AI+%26+Machine+Learning+Enthusiast+%F0%9F%A4%96;Data+Science+Explorer+%F0%9F%93%8A;Python+%26+Full+Stack+Developer+%F0%9F%90%8D;Building+Real-World+AI+Solutions+%F0%9F%9A%80" alt="Typing SVG" />
+                </div>
+                <div class="banner-badges">
+                    <a href="https://github.com/Adiipandit255" target="_blank">
+                        <img src="https://komarev.com/ghpvc/?username=Adiipandit255&label=Profile+Views&style=for-the-badge&color=0284c7" alt="Profile Views" />
+                    </a>
+                    <a href="https://github.com/Adiipandit255?tab=followers" target="_blank">
+                        <img src="https://img.shields.io/github/followers/Adiipandit255?style=for-the-badge&logo=github&color=0f172a" alt="Followers" />
+                    </a>
+                    <a href="https://github.com/Adiipandit255?tab=stars" target="_blank">
+                        <img src="https://img.shields.io/github/stars/Adiipandit255?style=for-the-badge&color=0f172a" alt="Stars" />
+                    </a>
+                </div>
+            </div>
+        </div>
         <article class="markdown-body" id="content">
             Loading preview...
         </article>
@@ -155,9 +316,10 @@ const server = http.createServer((req, res) => {
                 .then(markdown => {
                     // Intercept and replace snake URLs with local preview generator
                     let processed = markdown.replace(
-                        /https:\/\/raw\.githubusercontent\.com\/Adiipandit255\/Adiipandit255\/output\/github-contribution-grid-snake(-dark)?\.svg/g,
+                        /https:\\/\\/raw\\.githubusercontent\\.com\\/Adiipandit255\\/Adiipandit255\\/output\\/github-contribution-grid-snake(-dark)?\\.svg/g,
                         '/local-snake.svg'
                     );
+
 
                     if (processed !== lastMarkdown) {
                         lastMarkdown = processed;
@@ -186,19 +348,10 @@ const server = http.createServer((req, res) => {
             res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
             res.end(data);
         });
-    } else if (req.url === '/banner.svg') {
-        fs.readFile(path.join(__dirname, 'banner.svg'), 'utf8', (err, data) => {
-            if (err) {
-                res.writeHead(404, { 'Content-Type': 'text/plain' });
-                res.end('Not Found');
-                return;
-            }
-            res.writeHead(200, { 'Content-Type': 'image/svg+xml; charset=utf-8' });
-            res.end(data);
-        });
     } else if (req.url === '/local-snake.svg') {
         res.writeHead(200, { 'Content-Type': 'image/svg+xml; charset=utf-8' });
         res.end(generateSnakeSVG());
+
     } else {
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('Not Found');
