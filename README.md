@@ -1,19 +1,7 @@
 <p align="center">
-  <img src="banner.svg" width="100%" alt="Aditya Sharma Banner" />
+  <img src="banner.svg" width="100%" alt="Aditya Sharma's Profile Banner" />
 </p>
 
-
-<p align="center">
-  <a href="https://github.com/Adiipandit255">
-    <img src="https://komarev.com/ghpvc/?username=Adiipandit255&label=Profile+Views&style=for-the-badge&color=0284c7" alt="Profile Views" />
-  </a>
-  <a href="https://github.com/Adiipandit255?tab=followers">
-    <img src="https://img.shields.io/github/followers/Adiipandit255?style=for-the-badge&logo=github&color=0f172a" alt="Followers" />
-  </a>
-  <a href="https://github.com/Adiipandit255?tab=stars">
-    <img src="https://img.shields.io/github/stars/Adiipandit255?style=for-the-badge&color=0f172a" alt="Stars" />
-  </a>
-</p>
 
 ---
 

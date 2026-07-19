@@ -155,10 +155,9 @@ const server = http.createServer((req, res) => {
                 .then(markdown => {
                     // Intercept and replace snake URLs with local preview generator
                     let processed = markdown.replace(
-                        /https:\\/\\/raw\\.githubusercontent\\.com\\/Adiipandit255\\/Adiipandit255\\/output\\/github-contribution-grid-snake(-dark)?\\.svg/g,
+                        /https:\/\/raw\.githubusercontent\.com\/Adiipandit255\/Adiipandit255\/output\/github-contribution-grid-snake(-dark)?\.svg/g,
                         '/local-snake.svg'
                     );
-
 
                     if (processed !== lastMarkdown) {
                         lastMarkdown = processed;
@@ -188,7 +187,7 @@ const server = http.createServer((req, res) => {
             res.end(data);
         });
     } else if (req.url === '/banner.svg') {
-        fs.readFile(path.join(__dirname, 'banner.svg'), (err, data) => {
+        fs.readFile(path.join(__dirname, 'banner.svg'), 'utf8', (err, data) => {
             if (err) {
                 res.writeHead(404, { 'Content-Type': 'text/plain' });
                 res.end('Not Found');
@@ -200,7 +199,6 @@ const server = http.createServer((req, res) => {
     } else if (req.url === '/local-snake.svg') {
         res.writeHead(200, { 'Content-Type': 'image/svg+xml; charset=utf-8' });
         res.end(generateSnakeSVG());
-
     } else {
         res.writeHead(404, { 'Content-Type': 'text/plain' });
         res.end('Not Found');
